@@ -1,10 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { SafeAreaView, View } from 'react-native';
+import { KeyboardAvoidingView, View } from 'react-native';
 
 import { styles } from './styles'
 import { BatLogo } from '../../components/BatLogo';
-import { BatTextInput } from '../../components/BatTextInput';
 import { BatButton } from '../../components/BatButton';
 
 export function Home() {
@@ -15,9 +14,12 @@ export function Home() {
         <BatLogo />
       </View>
       
-      <View style={styles.buttonContainer}>
+      <KeyboardAvoidingView
+        behavior='padding'
+        style={styles.buttonContainer}
+      >
         <BatButton />
-      </View>
+      </KeyboardAvoidingView>
 
       <StatusBar style="light" />
     </View>
